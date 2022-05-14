@@ -1,0 +1,21 @@
+<ion-header class = "header" [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Cine App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class = "contentBody">
+  <ion-searchbar placeholder="Buscar" color="medium" [(ngModel)]="term" (ionChange)="searchChanged($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item color="dark" button *ngFor="let movieResult of $any(results | async)" [routerLink]="['/', 'movie', movieResult.imdbID]">
+      <ion-avatar slot="start">
+        <img src="{{movieResult.Poster}}" alt="{{movieResult.Title}}" *ngIf="movieResult.Poster 'N/A'">
+      </ion-avatar>
+      <ion-label text-wrap>
+        <h3>{{movieResult.Title}}</h3>
+        {{movieResult.Year}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+ 

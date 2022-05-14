@@ -1,0 +1,19 @@
+.info-img{
+    max-height: 50vh;
+    position: relative;
+}
+
+.sinopsis{
+    padding: 25px;
+    padding-left: 0px;
+    margin: 0px;
+    position: relative;
+    align-self: baseline;
+    
+}
+
+@media (max-width: 800px){
+    .info-img{
+        max-height: 100px;
+    }
+}
